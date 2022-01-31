@@ -209,14 +209,16 @@ transition: color var(--transition);
 .footer-social{
     display: flex;
     flex-direction: column;
+    margin-right: 93px;
 }
 .footer .social-link{
     color: var(--light-text-color);
 }
-  
 
 
-.footer-social-logo{
+
+.footer-social-logo, 
+.footer-mailing-logo{
  font-weight: bold;
 font-size: 14px;
 line-height: 1.14;
@@ -227,6 +229,25 @@ color: var(--light-text-color);
 margin-bottom: 20px;
 }
 
+.mailing-input{
+    width: 375px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+    margin-right: 12px;
+    padding: 15px 16px;
+    color: var(--light-text-color);
+
+}
+
+.mailing-input::placeholder{
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6)
+    }
+
+  
 /*---------HERO--------*/
 .hero{
     background-color: var(--dark-background-color);
@@ -257,7 +278,8 @@ margin-right: auto;
 
 
 }
-.hero-button{
+.hero-button,
+.mailing-button{
 font-weight: bold;
 font-size: 16px;
 line-height: 1.875;
