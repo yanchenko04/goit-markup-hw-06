@@ -417,7 +417,7 @@
           <form action="#" class="mailing-form">
               <div class="mailing-section">
               <input 
-              type="mail" 
+              type="email" 
               placeholder="E-mail" 
               class="mailing-input"
               name="mailing"
@@ -444,24 +444,43 @@
         </button>
         <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
         <form action="#">
+            <label class="imput-title" for="user-name">Имя</label>
             <input 
             type="text" 
             placeholder="" 
             class="form-input"
-            name=""
+            name="user-name"
+            required
+            id="user-name"
             >
+            <label class="imput-title" for="user-tel">Телефон</label>
             <input 
-            type="text" 
+            type="tel" 
             placeholder="" 
             class="form-input"
-            name=""
+            name="user-tel"
+            required
+            id="user-tel"
             >
+            <label class="imput-title" for="user-email">Почта</label>
             <input 
-            type="text" 
+            type="email" 
             placeholder="" 
             class="form-input"
-            name=""
+            name="user-email"
+            required
+            id="user-email"
             >
+            <label class="imput-title" for="user-text">Комментарий</label>
+            <textarea 
+            name="user-text"
+            id="user-text" 
+            placeholder="Введите текст"
+            class="form-text"
+            ></textarea>
+            <button type="submit" class="modal-button" >Отправить</button>
+
+        
         </form>
     </div>   
 </div>
