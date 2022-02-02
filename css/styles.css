@@ -750,29 +750,32 @@ margin-bottom: 12px;
     align-items: center;
  }
 
- .check-text::before{
-     content: '';
+ .check-text span{
      border: 2px solid var(--dark-text-color);
      width: 16px;
      height: 15px;
      border-radius: 2px;
      margin-right: 8px;
-     justify-content: center
-
-     
+     justify-content: center;
+     display: flex;
+     justify-items: center;
+     align-items: center;
  }
 
  
-.policy-check:checked + .check-text::before{
+.policy-check:checked + .check-text span{
     border: none;
-    background-image: url(../images/check.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  background-color:var(--accent-color)
+}
+.policy-check:checked + .check-text .policy-icon{
+    fill: var(--light-text-color);
 }
 .policy-link{
     color: var(--accent-color);
     margin-left: 3px;
+}
+.policy-icon{
+    fill: transparent;
 }
   
 
