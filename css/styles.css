@@ -178,10 +178,15 @@ transition: color var(--transition);
     display: flex;
     align-items: baseline;
 }
-.main-footer{
+.footer-cont-item{
     display: flex;
     flex-direction: column;
+}
+.footer-cont-item:not(:last-child){
     margin-right: 70px;
+}
+.footer-cont-item:last-child{
+    margin-right: auto;
 }
 .footer .logo{
     margin-bottom: 20px;
@@ -217,19 +222,19 @@ transition: color var(--transition);
 
 
 
-.footer-social-logo, 
-.footer-mailing-logo{
- font-weight: bold;
-font-size: 14px;
-line-height: 1.14;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-margin-bottom: 20px;
-color: var(--light-text-color);
-margin-bottom: 20px;
+.footer-title{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--light-text-color);
+    margin-bottom: 20px;
 }
-.mailing-section{
+.mailing-form{
     display: flex;
+    text-align: center;
 }
 
 .mailing-input{
@@ -240,6 +245,8 @@ margin-bottom: 20px;
     margin-right: 12px;
     padding: 15px 16px;
     color: var(--light-text-color);
+    transition: border-color var(--transition);
+    outline: none;
 
 }
 
@@ -249,30 +256,21 @@ margin-bottom: 20px;
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6)
     }
-
-.mailing-button  {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 1.875;
-    letter-spacing: 0.06em;
-    color: var(--light-text-color);
-    background-color:var(--accent-color);
-    padding: 10px 62px 10px 29px ;
-    
-    border: none;
-    border-radius: 4px;
-    min-width: 200px;
-}      
-
-.mailing-btn-section{
-    position: relative;
+.mailing-input:hover,
+.mailing-input:focus{
+border-color: var(--accent-color);
 }
 
+.mailing-button  {
+    display: flex;
+    text-align: center;
+}      
+
+
+
 .mailing-icon{
-    position: absolute;
-    right: 28px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 8px;
+   
 }
   
 /*---------HERO--------*/
@@ -305,8 +303,7 @@ margin-right: auto;
 
 
 }
-.hero-button,
-.modal-button{
+.main-btn{
 font-weight: bold;
 font-size: 16px;
 line-height: 1.875;
@@ -317,14 +314,17 @@ padding: 10px 32px;
 border: none;
 border-radius: 4px;
 min-width: 200px;
-
-
-
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+transition: background-color var(--transition);
 }
+
+.main-btn:hover,
+.main-btn:focus{
+    background-color: #188CE8;
+}
+
+
 /*---------ABOUT----------*/
-
-
-
 
 .about-title{
 font-size: 14px;
@@ -649,7 +649,8 @@ box-shadow:
     top: 8px; 
     transition: fill var(--transition) ; 
 }
-.modal-close:hover{
+.modal-close:hover,
+.modal-close:focus{
     fill: var(--accent-color);
 }
 
@@ -682,14 +683,21 @@ margin-bottom: 12px;
     outline: none;
     transition: fill var(--transition),
     border-color var(--transition) ;
-
 }
+
 .form-input:focus,
-.form-text:focus{
+.form-text:focus,
+.form-input:hover,
+.form-text:hover{
     border-color: var(--accent-color);
 }
-.form-input:focus + .modal-icon{
+
+.form-input:focus + .modal-icon,
+.form-input:hover + .modal-icon{
     fill: var(--accent-color);
+}
+.modal-icon{
+    transition: fill var(--transition);
 }
 
 .input-title{
@@ -697,6 +705,7 @@ margin-bottom: 12px;
     line-height: 1.16;
     letter-spacing: 0.01em;
     margin-bottom: 4px;
+    
 }
 .form-field-text{
     margin-bottom: 20px;
@@ -710,9 +719,6 @@ margin-bottom: 12px;
      border-radius: 4px; 
      padding: 12px 16px;
      outline: none;
-     
-    
-     
  }
 
  .form-text::placeholder{
@@ -725,6 +731,7 @@ margin-bottom: 12px;
  .btn-field{
     text-align: center;
  }
+ 
  
      
  
@@ -748,9 +755,10 @@ margin-bottom: 12px;
     text-align: center;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
  }
 
- .check-text span{
+ .check-text .check-custom{
      border: 2px solid var(--dark-text-color);
      width: 16px;
      height: 15px;
@@ -760,15 +768,20 @@ margin-bottom: 12px;
      display: flex;
      justify-items: center;
      align-items: center;
+    
  }
 
  
-.policy-check:checked + .check-text span{
-    border: none;
+.policy-check:checked + .check-text .check-custom{
+    border: 2px solid var(--dark-text-color);
   background-color:var(--accent-color)
 }
 .policy-check:checked + .check-text .policy-icon{
     fill: var(--light-text-color);
+}
+.policy-check:hover + .check-text .check-custom,
+.policy-check:focus + .check-text .check-custom{
+    border: 2px solid var(--accent-color)
 }
 .policy-link{
     color: var(--accent-color);
